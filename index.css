@@ -230,7 +230,7 @@ div.row {
 div.row.smaller {
   height: 8.7%;
 }
-div.row div {
+.signmaker div.row div {
   position: relative;
   float: left;
   width: 16.6%;
