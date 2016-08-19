@@ -1,0 +1,42 @@
+     .overlay {
+         background-color: pink;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         z-index: 10;
+     }
+     
+     .footer {
+         background-color: deepskyblue;
+         position: fixed;
+         bottom: 0;
+         width: 100%;
+         z-index: 10;
+     }
+     
+     .leftspace {
+         background-color: orange;
+         position: fixed;
+         top: 0;
+         width: 30%;
+         z-index: 10;
+     }
+     
+     .centerspace {
+         background-color: lightgreen;
+         position: fixed;
+         top: 0;
+         width: 40%;
+         margin-left: 30%;
+         z-index: 10;
+     }
+     
+     .rightspace {
+         background-color: purple;
+         position: fixed;
+         top: 0;
+         width: 30%;
+         margin-left: 70%;
+         z-index: 10;
+     }
