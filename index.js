@@ -1437,8 +1437,9 @@ checkKeyboard = function(event, name) {
 function initPage() {
     initApp();
     hashSet();
-    checkSignLang('alphabet');
-    checkSignLang('dictionary');
+    //temporarily disable loading all alphabets and dictonaries
+    // checkSignLang('alphabet');
+    // checkSignLang('dictionary');
 }
 
 function initApp() {
