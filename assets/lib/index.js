@@ -1388,8 +1388,8 @@ checkKeyboard = function (event,name){
 function initPage(){
   initApp();
   hashSet();
-  checkSignLang('alphabet');
-  checkSignLang('dictionary');
+  // checkSignLang('alphabet');
+  // checkSignLang('dictionary');
 }
 
 function initApp(){
