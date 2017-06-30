@@ -1138,7 +1138,7 @@ var ssw = {
         svgvar += syms.join('') + "</svg>";
         exsign.syms = exsyms;
         if (options.laned) {
- 
+
             svgvar = '<div style="padding:10px;position:relative;width:' + w + 'px;height:' + h + 'px;left:' + l + 'px;">' + svgvar + '</div>';
         }
         exsign.lane = "";
