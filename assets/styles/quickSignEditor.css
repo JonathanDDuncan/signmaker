@@ -203,13 +203,6 @@
                 font-size: 30px;
             }
 
-            .readytoshow {
-                position: absolute;
-                bottom: 0px;
-                right: 0px;
-                z-index: 10;
-            }
-
             .choosing {
                 display: block;
                 height: 33px;
