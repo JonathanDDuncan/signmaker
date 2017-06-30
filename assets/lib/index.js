@@ -714,7 +714,19 @@ signmaker.view = function(ctrl){
       grid += '</svg>';
       break;
   }
-  var editor = [m('div',{id:"signbox"},[
+  var signbox = function (inner) {
+    return m('div',{id:"signbox", style:{
+          position: 'relative'}},inner.concat([ m('button',
+      { onclick:function(){app.ports.showOverlay.send("");},
+        style:{
+          position: 'absolute',
+          right: '0',
+          top: '0'
+        }
+  },"QuickSignEditor")]) )
+  };
+
+  var editor =  [signbox([
     m("div",m.trust(grid)),
     signmaker.vm.list.map(function(symbol, index) {
       return m("div"
@@ -871,10 +883,9 @@ signmaker.view = function(ctrl){
       ];
       var canvas = ssw.canvas(ssw.norm(signmaker.vm.fsw())+ssw.styling(signmaker.vm.styling()),{size: signmaker.vm.size(), pad: signmaker.vm.pad(), line: signmaker.vm.linecolor(), fill: signmaker.vm.fillcolor(), back: signmaker.vm.backcolor(), colorize: signmaker.vm.colorize()});
       var data = canvas?canvas.toDataURL("image/png"):"";
-      editor = m('div',{id:"signbox"},
-        m('div.mid',
+      editor = signbox(m('div.mid',
           m('img',{src:data,value:(signmaker.vm.terms[0]?signmaker.vm.terms[0]:"sign") + ".png"})
-        )
+        )          
       );
       break;
     case 5:
@@ -920,11 +931,9 @@ signmaker.view = function(ctrl){
         isApp?'':m('div.cmd.clickable',{onclick: signmaker.vm.dlsvg},tt('download')),
       ];
       var svg = ssw.svg(ssw.norm(signmaker.vm.fsw())+ssw.styling(signmaker.vm.styling()),{size: signmaker.vm.size(), pad: signmaker.vm.pad(), line: signmaker.vm.linecolor(), fill: signmaker.vm.fillcolor(), back: signmaker.vm.backcolor(), colorize: signmaker.vm.colorize()});
-      editor = m('div',{id:"signbox"},
-        m('div.mid',
+      editor = signbox (m('div.mid',
           m.trust(svg)
-        )
-      );
+        ));
       break;
     case 6:
       currentTab = [
